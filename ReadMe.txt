@@ -7,3 +7,5 @@ If file with provided name exists, the file gets replaced.
 The default path is to my folder (sorry),so if you're not Marek, please enter user's name before doing anything else.
 If you want to replace file without closing game, please do it while being in the main menu, before clicking "continue game",
 I have no idea what bugs can it cause.
+
+How to get python (must have): https://youtu.be/5Wm6JekpZdQ
