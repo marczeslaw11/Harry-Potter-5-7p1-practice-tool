@@ -42,7 +42,11 @@ def change_user():
         while len(save_buttons)>0:
             save_buttons[-1].destroy()
             save_buttons.pop(-1)
-        buttons()
+        if os.path.isdir(base_path):
+            buttons()
+        else:
+            missing()
+
 
     
 def buttons():
