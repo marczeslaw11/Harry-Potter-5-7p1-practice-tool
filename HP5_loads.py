@@ -15,6 +15,7 @@ def replace_save(event):
                 nr=savenr
                 break
         shutil.copy(base_path+saves[nr],base_path+base_save)
+        add_save.config(text="Add save file")
     elif mode=="delete":
         buttnr=event.widget
         for savenr in range(0,len(save_buttons)):
@@ -26,6 +27,7 @@ def replace_save(event):
             save_buttons[-1].destroy()
             save_buttons.pop(-1)
         buttons()
+    
 
 
 def change_user():
@@ -77,20 +79,23 @@ def buttons():
 
 
 def new_save():
-    if add_save_name.get()=='' or add_save_name.get()==' ':
-        for i in range(0,100):
-            if os.path.isfile(base_path+base_save+' '+str(i)):
-                continue
-            else:
-                break
-        name=str(i)
+    if os.path.isfile(base_path+base_save):
+        if add_save_name.get()=='' or add_save_name.get()==' ':
+            for i in range(0,100):
+                if os.path.isfile(base_path+base_save+' '+str(i)):
+                    continue
+                else:
+                    break
+            name=str(i)
+        else:
+            name=add_save_name.get()
+        shutil.copy(base_path+base_save,base_path+base_save+' '+name)
+        while len(save_buttons)>0:
+            save_buttons[-1].destroy()
+            save_buttons.pop(-1)
+        buttons()
     else:
-        name=add_save_name.get()
-    shutil.copy(base_path+base_save,base_path+base_save+' '+name)
-    while len(save_buttons)>0:
-        save_buttons[-1].destroy()
-        save_buttons.pop(-1)
-    buttons()
+        add_save.config(text="There's no file to save")
 
 
 def bg_c():
