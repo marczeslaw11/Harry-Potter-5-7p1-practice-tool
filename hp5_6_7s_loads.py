@@ -29,28 +29,9 @@ def replace_save(event):
             save_buttons.pop(-1)
         buttons()
     
-
-
-def change_user():
-    global current_user, base_path
-    new_user=user_txt.get()
-    if new_user!=current_user and new_user!='' and new_user!=' ':
-        base_path=base_path.replace(current_user,new_user)
-        current_user=new_user
-        curr_user.config(text="Current username: "+current_user)
-        
-        while len(save_buttons)>0:
-            save_buttons[-1].destroy()
-            save_buttons.pop(-1)
-        if os.path.isdir(base_path):
-            buttons()
-        else:
-            missing()
-
- 
     
 def buttons():
-    global saves, add_save
+    global saves, add_save, add_save_name, mode_butt, saves_list
     if len(additions)==0:
         add_save_name=Entry(okno, width='30', bg='light blue')
         add_save_name.pack()
@@ -178,11 +159,11 @@ def mode_change():
     
 
 
-EA_path=r"C:\Users\Marek\AppData\Local\Electronic Arts"
-game_paths=["\\Harry Potter and the Order of the Phoenix\\HPOOTP\\","\\Harry Potter and the Half Blood Prince\\HPHBP0\\","\\Harry Potter and the Deathly Hallows (TM) – Part 1\\","\\Harry Potter and the Deathly Hallows (TM) – Part 2\\"]
-games={game_paths[0]:"HP 5",game_paths[1]:"HP 6",game_paths[2]:"HP 7p1",game_paths[3]:"HP 7p2"}
+EA_path=os.getenv('LOCALAPPDATA')+"\\Electronic Arts"
+game_paths=["\\Harry Potter and the Order of the Phoenix\\HPOOTP\\","\\Harry Potter and the Half Blood Prince\\HPHBP0\\","\\Harry Potter and the Deathly Hallows (TM) – Part 1\\"]#,"\\Harry Potter and the Deathly Hallows (TM) – Part 2\\"]
+games={game_paths[0]:"HP 5",game_paths[1]:"HP 6",game_paths[2]:"HP 7s"}#,game_paths[3]:"HP 7p2"}
 base_game=game_paths[0]
-save_files={game_paths[0]:r"HPOOTP",game_paths[1]:r"HPHBP0",game_paths[2]:"auto",game_paths[3]:"auto"}
+save_files={game_paths[0]:r"HPOOTP",game_paths[1]:r"HPHBP0",game_paths[2]:"auto"}#,game_paths[3]:"auto"}
 base_save=save_files[base_game]
 #saves=['\HPOOTP 12%', '\HPOOTP bench skip train', '\HPOOTP crash', '\HPOOTP endgame', '\HPOOTP heavy tested mid', '\HPOOTP last parts', '\HPOOTP mid game', '\HPOOTP sam start']
 saves=[]
@@ -201,11 +182,6 @@ ns=[]
 
 okno=Tk()
 
-curr_user=Label(okno, text="Current username: "+current_user)
-curr_user.pack()
-user_txt=Entry(okno, width="30")
-user_txt.pack()
-Button(okno, text="Change user", width="20", command=change_user, bg="dark grey", fg="white").pack()
 curr_game=Label(okno, text="Current game: "+games[base_game])
 curr_game.pack()
 games_butt=Button(text="Change game", bg="light grey", command=change_game)
