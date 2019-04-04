@@ -1,11 +1,9 @@
-Program sees only files in folder C:\Users\user\AppData\Local\Electronic Arts\Harry Potter and the Order of the Phoenix\HPOOTP
-with name starting with "HPOOTP ". 
-Text written in blue Entry box will be used as a name to file created with button below
-(the file's name will be "HPOOTP " + Entry text). 
-If no name provided, program will create new file with integer in the end of name,starts counting from 0. 
-If file with provided name exists, the file gets replaced. 
-The default path is to my folder (sorry),so if you're not Marek, please enter user's name before doing anything else.
-If you want to replace file without closing game, please do it while being in the main menu, before clicking "continue game",
-I have no idea what bugs can it cause.
-
-How to get python (must have): https://youtu.be/5Wm6JekpZdQ
+Program is simple:
+In folder with saves (found in AppData) you musn't have any files/folders other than actual save file and it's copies. 
+Copies must be named by the name of actual save and anything, seperate those 2 parts with space.
+To switch between load and delete modes press button, that indicates what is current mode (default mode is load).
+After pressing button in load mode, current save file will be replaced with the chosen one.
+After pressing button in delete mode, chosen save file will be deleted.
+After pressing "Change game" button, aviable games will appear in new window (note: hp7s aren't tested, please don't use it yet).
+After pressing "Add save file" button, current save file will be copied and named with it's own name with added text from box above. In case box was empty, the next integer, starting with 0, will be added to the name.
+ 
