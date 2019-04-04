@@ -6,4 +6,4 @@ After pressing button in load mode, current save file will be replaced with the 
 After pressing button in delete mode, chosen save file will be deleted.
 After pressing "Change game" button, aviable games will appear in new window (note: hp7s aren't tested, please don't use it yet).
 After pressing "Add save file" button, current save file will be copied and named with it's own name with added text from box above. In case box was empty, the next integer, starting with 0, will be added to the name.
- 
+HP6 edits save only at the 1st slot atm.
