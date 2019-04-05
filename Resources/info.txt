@@ -1,0 +1,3 @@
+In this folder, the bookmark saves fill be stored, sorted in corresponding folders.
+
+Currently only HP 5 files are aviable.
