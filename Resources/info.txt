@@ -1,3 +1,5 @@
 In this folder, the bookmark saves fill be stored, sorted in corresponding folders.
 
 Currently only HP 5 files are aviable.
+
+You can use the resources by pasting the files manualy in the game folder that stores default save file or running the application file in the same folder as the Resources folder; button that allows importing all save files will appear if the Resources folder is present.
